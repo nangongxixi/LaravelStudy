@@ -12,6 +12,6 @@
 
 </head>
 <body>
-<a href="{{ url('/about') }}"> 首页5775</a> <?php echo $name ?> <?= $name ?> {{ $name }}
+<a href="{{ url('/about') }}"> 首页655</a> <?php echo $name ?> <?= $name ?> {{ $name }}
 </body>
 </html>
