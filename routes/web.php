@@ -10,19 +10,25 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     //return 'HI';
     //view是加载resources/views/welcome.blade.php
     $name = '张三';
     return view('welcome')->with('name', $name);
 });
+*/
 
+Route::get('/','SiteController@home');
+
+/*
 Route::get('news', function () {
     //return 'news';
     $name = '<span style="color:red">红色的字</span>';
     return view('news')->with('name', $name);
 });
+*/
+Route::get('/news','NewsController@index');
 
 Route::get('about', function () {
     //return 'about';
