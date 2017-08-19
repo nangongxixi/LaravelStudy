@@ -20,6 +20,8 @@ Route::get('/', function () {
 */
 
 Route::get('/','SiteController@home');
+Route::get('articles','ArticleController@index');
+Route::get('articles/{id}','ArticleController@show');
 
 /*
 Route::get('news', function () {
@@ -39,3 +41,6 @@ Route::get('about', function () {
     return view('about', $name);
 
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
