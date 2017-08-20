@@ -19,9 +19,11 @@ Route::get('/', function () {
 });
 */
 
-Route::get('/','SiteController@home');
-Route::get('articles','ArticleController@index');
-Route::get('articles/{id}','ArticleController@show');
+Route::get('/', 'SiteController@home');
+Route::get('articles', 'ArticleController@index');
+Route::get('articles/{id}', 'ArticleController@show')->where(['id' => '\d+']);
+Route::get('articles/create', 'ArticleController@create')->middleware('auth');
+Route::post('articles/create', 'ArticleController@storage')->middleware('auth');
 
 /*
 Route::get('news', function () {
@@ -30,7 +32,7 @@ Route::get('news', function () {
     return view('news')->with('name', $name);
 });
 */
-Route::get('/news','NewsController@index');
+Route::get('/news', 'NewsController@index');
 
 Route::get('about', function () {
     //return 'about';

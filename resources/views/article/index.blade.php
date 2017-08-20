@@ -12,7 +12,7 @@
 <div>MyBlog</div>
 <div>
     <a href="{{ url('/') }}"> 首页</a>
-    <a href="{{ url('/article') }}">文章列表</a>
+    <a href="{{ url('/articles') }}">文章列表</a>
     <a href="{{ url('/about') }}">关于我们</a>
 </div>
 
