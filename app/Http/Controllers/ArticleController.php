@@ -13,7 +13,8 @@ class ArticleController extends Controller
     {
         //return view('article/index');// '/'线或者‘.’都可以表示目录层级
         //return view('article.index');
-        $articlesList = Article::get();
+        //$articlesList = Article::get();
+        $articlesList = Article::orderby('id', 'desc')->with('user')->paginate(2);//不传参表示默认页面大小
         return view('article.index')->with('articles', $articlesList);
     }
 
@@ -55,8 +56,8 @@ class ArticleController extends Controller
         //当前登录用户id
         $result->user_id = \Auth::id();
 
-        if($result->save()){
-            $url = url('articles',$result->id);
+        if ($result->save()) {
+            $url = url('articles', $result->id);
             return redirect($url);
         };
     }

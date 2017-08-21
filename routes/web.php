@@ -38,10 +38,8 @@ Route::get('about', function () {
     //return 'about';
     // $name = 'zhangsan';
     // return view('about')->with(['name' => $name, 'age' => 18]);
-
     $name = ['name' => 'zhangsan', 'age' => 18];
     return view('about', $name);
-
 });
 Auth::routes();
 
